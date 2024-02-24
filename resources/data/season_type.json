@@ -1,0 +1,32 @@
+[
+    {
+        "st": 1,
+        "name": "番剧",
+        "key": "anime"
+    },
+    {
+        "st": 4,
+        "name": "国创",
+        "key": "guochuang"
+    },
+    {
+        "st": 7,
+        "name": "综艺",
+        "key": "variety"
+    },
+    {
+        "st": 2,
+        "name": "电影",
+        "key": "movie"
+    },
+    {
+        "st": 5,
+        "name": "电视剧",
+        "key": "tv"
+    },
+    {
+        "st": 3,
+        "name": "纪录片",
+        "key": "documentary"
+    }
+]

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">200</defaultcontrol>
+    <controls>
+        <include>DefaultBackground</include>
+        <control type="list" id="50">
+            <description>Media Info, One List Item</description>
+            <itemlayout></itemlayout>
+        </control>
+        <control type="group">
+            <include content="TopBar">
+                <param name="breadcrumbs_label" value="$INFO[Container(50).ListItem.Label]" />
+                <param name="sublabel" value="$INFO[Container(50).ListItem.Label2]" />
+            </include>
+            <control type="group">
+                <description>Left Part</description>
+                <include>OpenClose_Left</include>
+                <depth>DepthSideBlade</depth>
+                <control type="image">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>520</width>
+                    <height>100%</height>
+                    <texture border="0,0,52,0">lists/panel-mediamenu.png</texture>
+                </control>
+                <control type="grouplist" id="90">
+                    <onright>200</onright>
+                    <top>50</top>
+                    <control type="label" id="91">
+                        <include>MediaMenuLabelCommon</include>
+                        <label>筛选</label>
+                    </control>
+                    <control type="button" id="100">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="101">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="102">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="103">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="104">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="105">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="106">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="107">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="108">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="109">
+                        <include>MediaMenuItemsCommon</include>
+                        <label>重置</label>
+                    </control>
+                    <!-- divider -->
+                    <control type="label" id="92">
+                        <include>MediaMenuLabelCommon</include>
+                        <label>排序</label>
+                    </control>
+                    <control type="button" id="110">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="111">
+                        <include>MediaMenuItemsCommon</include>
+                    </control>
+                    <control type="button" id="112">
+                        <include>MediaMenuItemsCommon</include>
+                        <label>重置</label>
+                    </control>
+                </control>
+            </control>
+            <control type="group">
+                <description>Right Part</description>
+                <include>OpenClose_Right</include>
+                <left>520</left>
+                <top>120</top>
+                <include>Visible_Right</include>
+                <control type="panel" id="200">
+                    <onleft>90</onleft>
+                    <onright>300</onright>
+                    <left>0</left>
+                    <top>0</top>
+                    <width>98%</width>
+                    <height>100%</height>
+                    <pagecontrol>300</pagecontrol>
+                    <scrolltime tween="cubic" easing="out">500</scrolltime>
+                    <itemlayout height="445" width="300">
+                        <control type="group">
+                            <include>InfoWallMovieLayout</include>
+                        </control>
+                    </itemlayout>
+                    <focusedlayout height="445" width="300">
+                        <control type="group">
+                            <depth>DepthContentPopout</depth>
+                            <animation effect="zoom" start="100" end="110" time="200" tween="sine"
+                                easing="inout" center="160,300">Focus</animation>
+                            <animation effect="zoom" start="110" end="100" time="200" tween="sine"
+                                easing="inout" center="160,300">UnFocus</animation>
+                            <include content="InfoWallMovieLayout">
+                                <param name="focused" value="true" />
+                            </include>
+                        </control>
+                    </focusedlayout>
+                </control>
+            </control>
+            <control type="group">
+                <description>Scrollbar</description>
+                <right>0</right>
+                <top>list_top_offset</top>
+                <width>60</width>
+                <bottom>0</bottom>
+                <control type="scrollbar" id="300">
+                    <onleft>200</onleft>
+                    <right>0</right>
+                    <top>0</top>
+                    <bottom>0</bottom>
+                    <width>13</width>
+                    <orientation>vertical</orientation>
+                    <showonepage>false</showonepage>
+                    <texturesliderbackground />
+                    <animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
+                    <animation effect="fade" start="100" end="0" time="200" tween="sine"
+                        condition="System.HasActiveModalDialog">Conditional</animation>
+                    <animation effect="fade" start="0" end="100" delay="300" time="320">WindowOpen</animation>
+                    <animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+                    <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+                    <animation effect="slide" end="6,0" time="300" tween="sine" easing="inout"
+                        condition="!Control.HasFocus(300)">conditional</animation>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

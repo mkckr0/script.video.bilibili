@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">103</defaultcontrol>
+    <controls>
+        <include>DefaultBackground</include>
+        <control type="list" id="100">
+            <description>Media Info, One List Item</description>
+            <itemlayout></itemlayout>
+        </control>
+        <include content="TopBar">
+            <param name="breadcrumbs_label" value="" />
+            <param name="sublabel" value="" />
+        </include>
+        <control type="group">
+            <top>50</top>
+            <left>300</left>
+            <right>300</right>
+            <control type="group">
+                <orientation>vertical</orientation>
+                <itemgap>30</itemgap>
+                <control type="grouplist">
+                    <height>400</height>
+                    <orientation>horizontal</orientation>
+                    <itemgap>30</itemgap>
+                    <control type="image">
+                        <top>0</top>
+                        <left>0</left>
+                        <width>300</width>
+                        <height>400</height>
+                        <aspectratio>keep</aspectratio>
+                        <info>Container(100).ListItem.Thumb</info>
+                    </control>
+                    <control type="grouplist">
+                        <itemgap>10</itemgap>
+                        <control type="label">
+                            <height>80</height>
+                            <font>font52_title</font>
+                            <info>Container(100).ListItem.Title</info>
+                        </control>
+                        <control type="label">
+                            <width>auto</width>
+                            <height>40</height>
+                            <font>font12</font>
+                            <label>评分：$INFO[Container(100).ListItem.Rating]</label>
+                        </control>
+                        <control type="label">
+                            <width>auto</width>
+                            <height>40</height>
+                            <font>font12</font>
+                            <info>Container(100).ListItem.Property(styles)</info>
+                        </control>
+                        <control type="grouplist">
+                            <height>40</height>
+                            <orientation>horizontal</orientation>
+                            <itemgap>20</itemgap>
+                            <control type="label">
+                                <width>auto</width>
+                                <font>font12</font>
+                                <info>Container(100).ListItem.Property(release_date_show)</info>
+                            </control>
+                            <control type="label">
+                                <width>auto</width>
+                                <font>font12</font>
+                                <info>Container(100).ListItem.Property(time_length_show)</info>
+                            </control>
+                        </control>
+                        <control type="textbox">
+                            <height>200</height>
+                            <width>900</width>
+                            <font>font12</font>
+                            <label>简介：$INFO[Container(100).ListItem.Plot]</label>
+                        </control>
+                    </control>
+                </control>
+                <control type="group">
+                    <top>450</top>
+                    <left>0</left>
+                    <right>0</right>
+                    <control type="list" id="102">
+                        <onleft>103</onleft>
+                        <onright>103</onright>
+                        <width>300</width>
+                        <height>100%</height>
+                        <orientation>vertical</orientation>
+                        <itemlayout width="300" height="list_item_height">
+                            <control type="label">
+                                <left>10</left>
+                                <right>10</right>
+                                <font>font20</font>
+                                <aligny>center</aligny>
+                                <info>ListItem.Label</info>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout width="300" height="list_item_height">
+                            <control type="image">
+                                <visible>Control.HasFocus(102)</visible>
+                                <texture colordiffuse="button_focus">lists/focus.png</texture>
+                            </control>
+                            <control type="label">
+                                <left>10</left>
+                                <right>10</right>
+                                <font>font20</font>
+                                <aligny>center</aligny>
+                                <info>ListItem.Label</info>
+                            </control>
+                        </focusedlayout>
+                    </control>
+                    <control type="panel" id="103">
+                        <onleft>102</onleft>
+                        <onright>102</onright>
+                        <left>320</left>
+                        <height>100%</height>
+                        <itemlayout height="301" width="300">
+                            <control type="group">
+                                <include content="InfoWallEpisodeLayout">
+                                    <param name="thumb_label" value="$INFO[ListItem.Label2]" />
+                                </include>
+                            </control>
+                        </itemlayout>
+                        <focusedlayout height="301" width="300">
+                            <control type="group">
+                                <depth>DepthContentPopout</depth>
+                                <animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="160,280">Focus</animation>
+                                <animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="160,280">UnFocus</animation>
+                                <include content="InfoWallEpisodeLayout">
+                                    <param name="focused" value="true" />
+                                    <param name="thumb_label" value="$INFO[ListItem.Label2]" />
+                                </include>
+                            </control>
+                        </focusedlayout>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

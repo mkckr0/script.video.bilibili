@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">3</defaultcontrol>
+    <include>Animation_DialogPopupOpenClose</include>
+    <depth>DepthOSD</depth>
+    <controls>
+        <control type="group">
+            <centertop>50%</centertop>
+            <centerleft>50%</centerleft>
+            <height>750</height>
+            <width>1220</width>
+            <include content="DialogBackgroundCommons">
+                <param name="width" value="1220" />
+                <param name="height" value="750" />
+                <param name="header_label" value="扫码登录" />
+                <param name="header_id" value="1" />
+            </include>
+            <control type="group">
+                <top>70</top>
+                <control type="group">
+                    <centertop>50%</centertop>
+                    <centerleft>50%</centerleft>
+                    <width>600</width>
+                    <height>600</height>
+                    <control type="image" id="100">
+                        <visible>String.IsEmpty(Control.GetLabel(101))</visible>
+                        <aspectratio>keep</aspectratio>
+                    </control>
+                    <control type="group">
+                        <centertop>50%</centertop>
+                        <centerleft>50%</centerleft>
+                        <visible>!String.IsEmpty(Control.GetLabel(101))</visible>
+                        <control type="image">
+                            <aspectratio>keep</aspectratio>
+                            <texture border="40">buttons/dialogbutton-nofo.png</texture>
+                        </control>
+                        <control type="label" id="101">
+                            <font>font12</font>
+                            <align>center</align>
+                            <aligny>center</aligny>
+                            <textcolor>grey</textcolor>
+                            <label>二维码已失效</label>
+                        </control>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </controls>
+</window>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+    <defaultcontrol always="true">102</defaultcontrol>
+    <controls>
+        <include>DefaultBackground</include>
+        <control type="group">
+            <include content="TopBar">
+                <param name="breadcrumbs_label" value="" />
+                <param name="sublabel" value="" />
+            </include>
+        </control>
+        <control type="grouplist">
+            <centertop>50%</centertop>
+            <centerleft>50%</centerleft>
+            <width>600</width>
+            <height>800</height>
+            <control type="button" id="99">
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>登录</label>
+            </control>
+            <control type="button" id="101">
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            <control type="button" id="104">
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            <control type="button" id="107">
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            <control type="button" id="102">
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            <control type="button" id="105">
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+            <control type="button" id="103">
+                <height>100</height>
+                <align>center</align>
+                <aligny>center</aligny>
+            </control>
+        </control>
+
+    </controls>
+</window>

@@ -1,0 +1,6 @@
+*/.git/*
+*/.github/*
+*/out/*
+*/scripts/*
+*/.gitignore
+*/README.md
