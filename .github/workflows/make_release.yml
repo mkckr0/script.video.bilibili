@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - run: ./scripts/pack.sh
+    - run: bash ./scripts/pack.sh
     - name: Create Github Release
       run: gh release create "${{inputs.tag}}" -d -t "${{inputs.tag}}" out/*
       env:
