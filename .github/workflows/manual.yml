@@ -1,0 +1,21 @@
+name: Make Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag Name'
+        default: 'v0.0.1'
+        required: true
+        type: string
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: ./scripts/pack.sh
+    - name: Create Github Release
+      run: gh release create "${{inputs.tag}}" -d -t "${{inputs.tag}}" out/*
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
