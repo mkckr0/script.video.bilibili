@@ -1,3 +1,4 @@
+import re
 import time
 import typing
 from urllib.parse import urlencode
@@ -68,6 +69,7 @@ class MediaInfoWindow(CommonWindowXML):
         tag.setTitle(media_info["title"])
         tag.setTagLine(media_info["alias"])
         tag.setOriginalTitle(media_info["origin_name"])
+        media_info["evaluate"] = re.compile(" +").sub("  ", media_info["evaluate"])
         tag.setPlot(media_info["evaluate"])
         tag.setCountries([area["name"] for area in media_info["areas"]])
         if "rating" in media_info:
